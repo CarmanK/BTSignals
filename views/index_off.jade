@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  div(class='on_off')
+    button(class='btn', id='on_btn', onclick='set_active("on")') ON
+    button(class='btn active', id='off_btn', onclick='set_active("off")') OFF
+  div(class='brightness')
+    form(name='signal', method='post', onsubmit='validate_brightness()')
+      div.input
+        label(for='brightness') Brightness:
+        input(id='brightness_text', type='text', name='brightness', placeholder='0-100', maxlength='3')
+      div.actions
+        input(type='submit', value='Send Signal')
+  form(name='on', method='post', id='on_form')
+    input(type='hidden' name='brightness', value='-1')
+  form(name='off', method='post', id='off_form')
+    input(type='hidden' name='brightness', value='-2')
