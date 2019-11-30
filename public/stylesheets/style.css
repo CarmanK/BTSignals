@@ -18,7 +18,7 @@ h1 {
 .on_off {
   overflow: hidden;
   text-align: center;
-  padding: 0px;
+  padding: 0px 0px 25px 0px;
   margin: 0px;
 }
 
@@ -28,7 +28,7 @@ h1 {
   cursor: pointer;
   transition: 0.1s;
   font-size: 25px;
-  margin: 0px 30px 0px 30px;
+  margin: 0px 20px 0px 20px;
   padding: 7px 28px;
   border: 5px solid rgb(191,191,191);
   border-radius: 12px;
@@ -36,10 +36,39 @@ h1 {
 }
 
 .on_off button:hover {
-  color: white;
+  color: rgb(215,215,215);
 }
 
 .on_off button.active {
   background-color: rgb(191,191,191);
   color: rgb(51,51,51);
+}
+
+label {
+  font-size: 35px;
+}
+
+input[type=text] {
+  background-color: rgb(191,191,191);
+  color: rgb(51,51,51);
+  font-size: 25px;
+  text-align: center;
+  margin: 10px 10px 35px 10px;
+  width: 100px;
+  border-radius: 4px;
+}
+
+input[type=submit] {
+  background-color: rgb(191,191,191);
+  color: rgb(51,51,51);
+  font-size: 25px;
+  margin: 0px;
+  padding: 7px 28px;
+  border-radius: 6px;
+  width: 200px;
+  outline: none;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(215,215,215);
 }
