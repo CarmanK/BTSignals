@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  div(class='on_off')
+    button(class='btn active', id='on_btn', onclick='set_active("on")') ON
+    button(class='btn', id='off_btn', onclick='set_active("off")') OFF
+  //- form(name="brightness", method="post")
+  //-     div.input
+  //-         span.label Brightness (0-100)
+  //-         input(type="text", name="bri")
+  //-     div.actions
+  //-         input(type="submit", value="Submit")
