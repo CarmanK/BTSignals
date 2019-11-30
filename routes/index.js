@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
 /* POST home page. */
 router.post('/', function (req, res) {
-  console.log(req.body.bri);
+  console.log(req.body.brightness);
   // v3.discovery.nupnpSearch()
   // .then(res => {
   //   const host = res[0].ipaddress;

@@ -5,8 +5,10 @@ function set_active(button){
     if(button === 'on'){
         on.className = 'btn active';
         off.className = 'btn';
+        document.getElementById('on_form').submit();
     }else{
         on.className = 'btn';
         off.className = 'btn active';
+        document.getElementById('off_form').submit();
     }
 }
