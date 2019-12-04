@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 
 /* POST home page. */
 router.post('/', function (req, res) {
+  var brightness = parseInt(req.body.brightness);
   v3.discovery.nupnpSearch()
     .then(res => {
       const host = res[0].ipaddress;
@@ -22,7 +23,7 @@ router.post('/', function (req, res) {
         .then(lights => {
           const state = new LightState()
           for (var light of lights){ // Adjust each light connected to the hue bridge.
-            switch(req.body.brightness) {
+            switch(brightness) {
               case -1: //Turn ON
                 state.transitionDefault().on()
                 res.render('index_on', {title: 'Hue Control Panel'});
@@ -32,7 +33,7 @@ router.post('/', function (req, res) {
                 res.render('index_off', {title: 'Hue Control Panel'});
                 break;
               default: // Adjust brightness
-                state.transitionDefault().on().brightness(req.body.brightness);
+                state.transitionDefault().on().brightness(brightness);
                 res.render('index_on', {title: 'Hue Control Panel'});
             }
             api.lights.setLightState(light._id, state);
